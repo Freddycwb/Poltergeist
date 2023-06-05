@@ -7,12 +7,10 @@ public class TiledMaterial : MonoBehaviour
 {
     private Material material;
     [SerializeField] private float scale;
-    [SerializeField] private Vector3 offset;
 
     private void Start()
     {
         material = GetComponent<Renderer>().material;
-        material.mainTextureScale = offset / scale;
-
+        material.mainTextureScale = transform.lossyScale / scale;
     }
 }
